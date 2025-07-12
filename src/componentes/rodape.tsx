@@ -48,7 +48,7 @@ export function Rodape() {
             <div>
               <p className="text-lg font-bold uppercase tracking-widest">{NOME_DO_SITE}</p>
               <p className="mt-2 text-sm text-white/70">
-                Portal oficial com notícias, projetos e transparência
+                Portal oficial com notícias e projetos
               </p>
             </div>
 
@@ -66,8 +66,8 @@ export function Rodape() {
                 </Link>
               </li>
               <li>
-                <Link href="/admin" className="text-white/80 hover:text-yellow-300">
-                  Área administrativa
+                <Link href="/login" className="text-xs text-white/50 hover:text-white/70">
+                  Login
                 </Link>
               </li>
             </ul>

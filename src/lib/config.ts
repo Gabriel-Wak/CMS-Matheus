@@ -1,5 +1,5 @@
-// dados do site - editar aqui quando for colocar em producao
-export const NOME_DO_SITE = "Portal Institucional";
+// dados do site - ajustei pra apresentacao
+export const NOME_DO_SITE = "Gabriel Wak";
 
 export const LINKS_MENU = [
   { caminho: "/", rotulo: "Início" },
@@ -9,20 +9,28 @@ export const LINKS_MENU = [
 ];
 
 export const CONTATO = {
-  telefone: "(79) 99999-0000",
-  telefoneRotulo: "Contato",
+  telefone: "(79) 98123-2193",
+  telefoneRotulo: "WhatsApp / Telefone",
   escritorios: [
-    { nome: "Gabinete Local", endereco: "Rua Exemplo, 100 - Aracaju", telefone: "(79) 3333-0000" },
-    { nome: "Gabinete Capital", endereco: "Brasília - DF", telefone: "(61) 3333-0000" },
+    {
+      nome: "Gabinete em Aracaju",
+      endereco: "Av. Franklin J. Churchill, 335 - Farolândia, Aracaju/SE",
+      telefone: "(79) 3218-0000",
+    },
+    {
+      nome: "Escritório em Brasília",
+      endereco: "Anexo IV - Câmara dos Deputados, Brasília/DF",
+      telefone: "(61) 3216-0000",
+    },
   ],
 };
 
 export const REDES_SOCIAIS = [
   { nome: "WhatsApp", link: "https://wa.me/5579981232193" },
-  { nome: "Instagram", link: "https://instagram.com" },
-  { nome: "Facebook", link: "https://facebook.com" },
-  { nome: "X", link: "https://x.com" },
-  { nome: "YouTube", link: "https://youtube.com" },
+  { nome: "Instagram", link: "https://instagram.com/gabrielwak" },
+  { nome: "Facebook", link: "https://facebook.com/gabrielwak" },
+  { nome: "X", link: "https://x.com/gabrielwak" },
+  { nome: "YouTube", link: "https://youtube.com/@gabrielwak" },
 ];
 
 // imagem padrao quando nao tem banner cadastrado

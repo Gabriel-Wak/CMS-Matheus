@@ -65,6 +65,6 @@ export async function DELETE(
     atualizarSite();
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ erro: "Erro ao excluir notícia" });
+    return NextResponse.json({ erro: "Nao deu pra excluir a noticia" });
   }
 }

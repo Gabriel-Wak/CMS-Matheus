@@ -24,6 +24,7 @@ export function FormularioProjeto({ projeto }: { projeto?: DadosProjeto }) {
 
     const formulario = new FormData(evento.currentTarget);
 
+    // mesma ideia do formulario de noticia
     let url = "/api/projetos";
     let metodo = "POST";
 

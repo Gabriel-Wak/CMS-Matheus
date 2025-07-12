@@ -24,6 +24,7 @@ export function FormularioBanner({ banner }: { banner?: DadosBanner }) {
 
     const formulario = new FormData(evento.currentTarget);
 
+    // na edicao a imagem e opcional
     let url = "/api/banners";
     let metodo = "POST";
 

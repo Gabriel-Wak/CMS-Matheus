@@ -31,8 +31,12 @@ Abre http://localhost:3000
 
 - Formulário de contato ainda não salva no banco
 - Formulário do hero é só visual
-- Trocar telefone/endereço no `src/lib/config.ts`
 - Melhorar tratamento de erro nas APIs
+- Paginação na busca
+
+## Conteúdo demo
+
+Se o banco estiver vazio: `npm run db:seed`
 
 ## Deploy
 

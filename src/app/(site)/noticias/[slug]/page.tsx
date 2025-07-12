@@ -35,6 +35,7 @@ export default async function PaginaNoticia({
         <p className="text-sm text-gray-500">
           {noticia.criadoEm.toLocaleDateString("pt-BR")}
         </p>
+        <p className="mt-4 text-lg text-gray-600">{noticia.resumo}</p>
         <div className="mt-6 whitespace-pre-line text-base leading-relaxed text-gray-700">
           {noticia.conteudo}
         </div>

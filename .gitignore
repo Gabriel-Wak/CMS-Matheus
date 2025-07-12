@@ -16,3 +16,6 @@
 npm-debug.log*
 
 .vercel
+
+# anotacoes pessoais (nao sobe pro github)
+/docs/

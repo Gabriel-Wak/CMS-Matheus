@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IMAGEM_PADRAO } from "@/lib/config";
 
 export function CabecalhoPagina({
@@ -28,7 +29,13 @@ export function CabecalhoPagina({
           <p className="mt-4 text-sm text-white/80">
             {caminho.map((item, i) => (
               <span key={i}>
-                {item.caminho ? <a href={item.caminho}>{item.rotulo}</a> : item.rotulo}
+                {item.caminho ? (
+                  <Link href={item.caminho} className="hover:underline">
+                    {item.rotulo}
+                  </Link>
+                ) : (
+                  item.rotulo
+                )}
                 {i < caminho.length - 1 ? " / " : ""}
               </span>
             ))}
