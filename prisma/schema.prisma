@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Banner {
+  id        String   @id @default(uuid()) @db.Uuid
+  titulo    String
+  subtitulo String?
+  imagem    String
+  criadoEm  DateTime @default(now()) @map("criado_em")
+
+  @@map("banners")
+}
+
+model Noticia {
+  id       String   @id @default(uuid()) @db.Uuid
+  titulo   String
+  slug     String   @unique
+  resumo   String
+  conteudo String
+  imagem   String
+  criadoEm DateTime @default(now()) @map("criado_em")
+
+  @@map("noticias")
+}
+
+model Projeto {
+  id        String   @id @default(uuid()) @db.Uuid
+  titulo    String
+  slug      String   @unique
+  descricao String
+  imagem    String
+  criadoEm  DateTime @default(now()) @map("criado_em")
+
+  @@map("projetos")
+}
