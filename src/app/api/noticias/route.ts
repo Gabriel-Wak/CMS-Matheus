@@ -1,0 +1,44 @@
+import { NextResponse } from "next/server";
+import { atualizarSite } from "@/lib/atualizar-site";
+import { banco } from "@/lib/banco";
+import { gerarSlug } from "@/lib/slug";
+import { enviarImagem } from "@/lib/upload";
+import { adminLogado } from "@/lib/verificar-sessao";
+
+export async function POST(requisicao: Request) {
+  const logado = await adminLogado();
+  if (!logado) {
+    return NextResponse.json({ erro: "Sem permissão" });
+  }
+
+  try {
+    const formulario = await requisicao.formData();
+    const titulo = String(formulario.get("titulo") ?? "").trim();
+    const resumo = String(formulario.get("resumo") ?? "").trim();
+    const conteudo = String(formulario.get("conteudo") ?? "").trim();
+    const arquivo = formulario.get("imagem");
+
+    if (!titulo || !resumo || !conteudo || !(arquivo instanceof File) || arquivo.size === 0) {
+      return NextResponse.json({ erro: "Preencha todos os campos e escolha uma imagem" });
+    }
+
+    const slug = gerarSlug(titulo) + "-" + Date.now();
+    const urlImagem = await enviarImagem("noticias", arquivo);
+
+    const noticia = await banco.noticia.create({
+      data: {
+        titulo: titulo,
+        slug: slug,
+        resumo: resumo,
+        conteudo: conteudo,
+        imagem: urlImagem,
+      },
+    });
+
+    atualizarSite();
+
+    return NextResponse.json({ ok: true, id: noticia.id });
+  } catch {
+    return NextResponse.json({ erro: "Falha ao cadastrar notícia" });
+  }
+}
