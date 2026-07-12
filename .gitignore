@@ -9,6 +9,7 @@
 .env
 .env.local
 .env.production
+.env.exemplo
 
 # outros
 .DS_Store
@@ -19,3 +20,4 @@ npm-debug.log*
 
 # anotacoes pessoais (nao sobe pro github)
 /docs/
+NOTAS.md
