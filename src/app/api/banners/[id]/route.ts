@@ -10,7 +10,7 @@ export async function PUT(
 ) {
   const logado = await adminLogado();
   if (!logado) {
-    return NextResponse.json({ erro: "Sem permissão" });
+    return NextResponse.json({ erro: "Nao autorizado" });
   }
 
   try {
@@ -18,7 +18,7 @@ export async function PUT(
     const bannerAtual = await banco.banner.findUnique({ where: { id: id } });
 
     if (!bannerAtual) {
-      return NextResponse.json({ erro: "Banner não encontrado" });
+      return NextResponse.json({ erro: "Banner nao encontrado" });
     }
 
     const formulario = await requisicao.formData();
@@ -44,7 +44,7 @@ export async function PUT(
 
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ erro: "Erro ao editar banner" });
+    return NextResponse.json({ erro: "Deu erro ao editar banner" });
   }
 }
 
@@ -54,7 +54,7 @@ export async function DELETE(
 ) {
   const logado = await adminLogado();
   if (!logado) {
-    return NextResponse.json({ erro: "Sem permissão" });
+    return NextResponse.json({ erro: "Nao autorizado" });
   }
 
   try {
@@ -63,6 +63,6 @@ export async function DELETE(
     atualizarSite();
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ erro: "Erro ao excluir banner" });
+    return NextResponse.json({ erro: "Nao deu pra apagar o banner" });
   }
 }

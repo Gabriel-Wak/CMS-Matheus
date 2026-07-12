@@ -48,9 +48,8 @@ export function FormularioProjeto({ projeto }: { projeto?: DadosProjeto }) {
       }
 
       roteador.push("/admin/projetos");
-      roteador.refresh();
     } catch {
-      setErro("Deu erro ao salvar. Tenta de novo.");
+      setErro("Erro ao salvar projeto");
       setSalvando(false);
     }
   }

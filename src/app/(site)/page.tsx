@@ -1,3 +1,4 @@
+// tive que forcar dynamic senao a home ficava desatualizada
 export const dynamic = "force-dynamic";
 
 import { BannerPrincipal } from "@/componentes/banner-principal";

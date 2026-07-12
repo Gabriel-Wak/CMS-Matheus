@@ -29,7 +29,7 @@ export function FormularioBanner({ banner }: { banner?: DadosBanner }) {
     let metodo = "POST";
 
     if (banner && banner.id) {
-      url = "/api/banners/" + banner.id;
+      url = `/api/banners/${banner.id}`;
       metodo = "PUT";
     }
 
@@ -50,7 +50,7 @@ export function FormularioBanner({ banner }: { banner?: DadosBanner }) {
       roteador.push("/admin/banners");
       roteador.refresh();
     } catch {
-      setErro("Deu erro ao salvar. Tenta de novo.");
+      setErro("Falha ao salvar banner");
       setSalvando(false);
     }
   }
@@ -98,7 +98,7 @@ export function FormularioBanner({ banner }: { banner?: DadosBanner }) {
       ) : null}
 
       <button className="botao" type="submit" disabled={salvando}>
-        {salvando ? "Salvando..." : "Salvar"}
+        {salvando ? "Salvando..." : "Gravar"}
       </button>
     </form>
   );

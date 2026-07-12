@@ -8,7 +8,7 @@ import { adminLogado } from "@/lib/verificar-sessao";
 export async function POST(requisicao: Request) {
   const logado = await adminLogado();
   if (!logado) {
-    return NextResponse.json({ erro: "Sem permissão" });
+    return NextResponse.json({ erro: "Acesso negado" });
   }
 
   try {
@@ -18,10 +18,10 @@ export async function POST(requisicao: Request) {
     const arquivo = formulario.get("imagem");
 
     if (!titulo || !descricao || !(arquivo instanceof File) || arquivo.size === 0) {
-      return NextResponse.json({ erro: "Preencha todos os campos e escolha uma imagem" });
+      return NextResponse.json({ erro: "Falta preencher algum campo" });
     }
 
-    const slug = gerarSlug(titulo) + "-" + Date.now();
+    const slug = gerarSlug(titulo);
     const urlImagem = await enviarImagem("projetos", arquivo);
 
     const projeto = await banco.projeto.create({

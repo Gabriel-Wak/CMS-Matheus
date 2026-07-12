@@ -18,16 +18,12 @@ export default function PaginaContato() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2 className="text-xl font-bold uppercase tracking-wide sm:text-2xl" style={{ color: "#001a3d" }}>
-              Entrar em contato com o gabinete é fácil
+              Contato
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-gray-600">
-              Preencha o formulário abaixo com sua mensagem. Nossa equipe retornará
-              o mais breve possível.
+              Formulario abaixo. Ainda nao salva no banco.
             </p>
             <div className="mt-6">
-              <p className="mb-3 text-sm font-semibold" style={{ color: "#001a3d" }}>
-                Siga nossas redes
-              </p>
               <LinksRedes estilo="circulo" tamanho={16} />
             </div>
             <div className="mt-8">
@@ -42,12 +38,9 @@ export default function PaginaContato() {
               className="absolute inset-0 h-full w-full object-cover opacity-20"
             />
             <div className="relative">
-              <h2 className="text-xl font-bold sm:text-2xl">Construa conosco</h2>
+              <h2 className="text-xl font-bold sm:text-2xl">Area lateral</h2>
               <p className="mt-3 text-sm text-white/85">
-                Quero deixar um canal de escuta aberto aqui com você!
-              </p>
-              <p className="mt-6 text-sm text-white/75">
-                Telefone e endereço ficam no rodapé. O formulário ainda está em desenvolvimento.
+                Texto de exemplo pra preencher o layout.
               </p>
             </div>
           </div>

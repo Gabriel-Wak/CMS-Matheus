@@ -13,7 +13,7 @@ export default async function PaginaAdminProjetos() {
       <CabecalhoAdmin titulo="Projetos" linkNovo={{ caminho: "/admin/projetos/novo", texto: "Novo projeto" }} />
 
       {projetos.length === 0 ? (
-        <p className="text-gray-500">Nenhum projeto cadastrado.</p>
+        <p className="text-gray-500">Sem projetos.</p>
       ) : (
         <div className="tabela-admin-wrap">
           <table className="tabela-admin">
@@ -21,7 +21,7 @@ export default async function PaginaAdminProjetos() {
             <tr>
               <th>Imagem</th>
               <th>Título</th>
-              <th>Slug</th>
+              <th>Descrição</th>
               <th>Ações</th>
             </tr>
           </thead>
@@ -32,11 +32,12 @@ export default async function PaginaAdminProjetos() {
                   <img src={projeto.imagem} alt="" className="h-12 w-20 object-cover" />
                 </td>
                 <td>{projeto.titulo}</td>
-                <td className="text-sm text-gray-600">{projeto.slug}</td>
+                <td className="text-sm text-gray-600">
+                  {projeto.descricao.length > 40
+                    ? projeto.descricao.slice(0, 40) + "..."
+                    : projeto.descricao}
+                </td>
                 <td className="acoes-tabela">
-                  <Link href={"/projetos/" + projeto.slug} className="link-acao" target="_blank">
-                    Ver
-                  </Link>
                   <Link href={`/admin/projetos/${projeto.id}/editar`} className="link-acao">
                     Editar
                   </Link>

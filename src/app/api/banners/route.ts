@@ -7,7 +7,7 @@ import { adminLogado } from "@/lib/verificar-sessao";
 export async function POST(requisicao: Request) {
   const logado = await adminLogado();
   if (!logado) {
-    return NextResponse.json({ erro: "Sem permissão" });
+    return NextResponse.json({ erro: "Nao autorizado" });
   }
 
   try {
@@ -17,7 +17,7 @@ export async function POST(requisicao: Request) {
     const arquivo = formulario.get("imagem");
 
     if (!titulo || !(arquivo instanceof File) || arquivo.size === 0) {
-      return NextResponse.json({ erro: "Preencha título e escolha uma imagem" });
+      return NextResponse.json({ erro: "Titulo e imagem sao obrigatorios" });
     }
 
     const urlImagem = await enviarImagem("banners", arquivo);
@@ -34,6 +34,6 @@ export async function POST(requisicao: Request) {
 
     return NextResponse.json({ ok: true, id: banner.id });
   } catch {
-    return NextResponse.json({ erro: "Não consegui salvar o banner" });
+    return NextResponse.json({ erro: "Nao consegui salvar o banner" });
   }
 }

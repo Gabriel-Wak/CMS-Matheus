@@ -21,8 +21,8 @@ export function CarrosselBanner({ itens }: { itens: ItemBanner[] }) {
       : [
           {
             id: "padrao",
-            titulo: "Construa conosco",
-            subtitulo: "Quero deixar um canal de escuta aberto aqui com você!",
+            titulo: "Banner padrao",
+            subtitulo: "texto de exemplo",
             imagem: IMAGEM_PADRAO,
           },
         ];

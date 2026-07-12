@@ -21,7 +21,7 @@ export function FormularioHero({ titulo, subtitulo }: { titulo: string; subtitul
       >
         <input className="campo" type="text" placeholder="Nome" />
         <input className="campo" type="email" placeholder="E-mail" />
-        <input className="campo" type="tel" placeholder="Celular: 79 99900-0000" />
+        <input className="campo" type="tel" placeholder="Celular" />
         <button className="botao botao-amarelo w-full" type="submit">
           Enviar
         </button>

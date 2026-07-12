@@ -16,13 +16,13 @@ async function main() {
   await banco.banner.createMany({
     data: [
       {
-        titulo: "Construa conosco",
-        subtitulo: "Quero deixar um canal de escuta aberto aqui com você!",
+        titulo: "Banner 1",
+        subtitulo: "texto de exemplo",
         imagem: IMG,
       },
       {
-        titulo: "Trabalho em Sergipe",
-        subtitulo: "Projetos e ações para a nossa gente",
+        titulo: "Banner 2",
+        subtitulo: "outro texto",
         imagem: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
       },
     ],
@@ -31,27 +31,24 @@ async function main() {
   await banco.noticia.createMany({
     data: [
       {
-        titulo: "Inauguração do novo espaço de atendimento",
-        slug: gerarSlug("Inauguração do novo espaço de atendimento") + "-1",
-        resumo: "Estrutura reformada para receber melhor a população.",
-        conteudo:
-          "Inauguramos o novo espaço de atendimento no gabinete.\n\nA ideia é facilitar o contato com moradores e lideranças da região.",
+        titulo: "Noticia teste 1",
+        slug: gerarSlug("Noticia teste 1") + "-1",
+        resumo: "resumo da noticia",
+        conteudo: "conteudo da noticia aqui",
         imagem: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1200&q=80",
       },
       {
-        titulo: "Projeto de iluminação em bairros da capital",
-        slug: gerarSlug("Projeto de iluminação em bairros da capital") + "-2",
-        resumo: "Melhoria da segurança com troca de luminárias.",
-        conteudo:
-          "Estamos acompanhando a troca de luminárias em vias importantes de Aracaju.\n\nO objetivo é deixar o trajeto mais seguro à noite.",
+        titulo: "Noticia teste 2",
+        slug: gerarSlug("Noticia teste 2") + "-2",
+        resumo: "outro resumo",
+        conteudo: "mais texto de exemplo",
         imagem: "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1200&q=80",
       },
       {
-        titulo: "Audiência pública sobre mobilidade urbana",
-        slug: gerarSlug("Audiência pública sobre mobilidade urbana") + "-3",
-        resumo: "Moradores participaram e trouxeram sugestões.",
-        conteudo:
-          "Realizamos audiência para ouvir demandas sobre transporte e trânsito.\n\nVamos levar as propostas para os órgãos competentes.",
+        titulo: "Noticia teste 3",
+        slug: gerarSlug("Noticia teste 3") + "-3",
+        resumo: "resumo curto",
+        conteudo: "texto placeholder",
         imagem: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80",
       },
     ],
@@ -60,15 +57,15 @@ async function main() {
   await banco.projeto.createMany({
     data: [
       {
-        titulo: "Saúde mais perto",
-        slug: gerarSlug("Saúde mais perto") + "-1",
-        descricao: "Articulação para ampliar horário de unidades básicas em bairros periféricos.",
+        titulo: "Projeto teste 1",
+        slug: gerarSlug("Projeto teste 1") + "-1",
+        descricao: "descricao do projeto",
         imagem: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
       },
       {
-        titulo: "Educação e tecnologia",
-        slug: gerarSlug("Educação e tecnologia") + "-2",
-        descricao: "Parceria com escolas para oficinas de informática e reforço escolar.",
+        titulo: "Projeto teste 2",
+        slug: gerarSlug("Projeto teste 2") + "-2",
+        descricao: "outra descricao",
         imagem: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
       },
     ],

@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 
 import { CabecalhoPagina } from "@/componentes/cabecalho-pagina";
 import { CardConteudo } from "@/componentes/card-conteudo";

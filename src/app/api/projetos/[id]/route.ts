@@ -10,7 +10,7 @@ export async function PUT(
 ) {
   const logado = await adminLogado();
   if (!logado) {
-    return NextResponse.json({ erro: "Sem permissão" });
+    return NextResponse.json({ erro: "Acesso negado" });
   }
 
   try {
@@ -44,7 +44,7 @@ export async function PUT(
 
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ erro: "Erro ao editar projeto" });
+    return NextResponse.json({ erro: "Erro na edicao do projeto" });
   }
 }
 
@@ -54,7 +54,7 @@ export async function DELETE(
 ) {
   const logado = await adminLogado();
   if (!logado) {
-    return NextResponse.json({ erro: "Sem permissão" });
+    return NextResponse.json({ erro: "Acesso negado" });
   }
 
   try {
@@ -63,6 +63,6 @@ export async function DELETE(
     atualizarSite();
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ erro: "Erro ao excluir projeto" });
+    return NextResponse.json({ erro: "Nao consegui apagar projeto" });
   }
 }

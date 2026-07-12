@@ -18,7 +18,7 @@ export function Cabecalho() {
         <Link href="/" className="cabecalho-site-logo">
           <span className="cabecalho-site-logo-linha1">{NOME_DO_SITE}</span>
           <span className="cabecalho-site-logo-linha2">
-            <span className="cabecalho-site-logo-amarelo">Portal</span> oficial
+            <span className="cabecalho-site-logo-amarelo">Portal</span>
           </span>
         </Link>
 
